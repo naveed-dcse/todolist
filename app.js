@@ -31,7 +31,7 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(portfunction() {
+app.listen(port,function() {
   console.log("http://localhost:3000");
 });
 
