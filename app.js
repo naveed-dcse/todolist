@@ -7,14 +7,6 @@ const mongoose = require("mongoose");
 
 const _=require("lodash");
 
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://admin:User%401234@cluster0.ncafq.mongodb.net/todolistDB?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("testDB").collection("todolistDB");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 
 // mongoose.connect("mongodb://localhost:27017/todolistDB");
@@ -35,9 +27,17 @@ const Item = mongoose.model("Item", itemsSchema);
 
 let title = "";
 
-app.listen(3000, function() {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(portfunction() {
   console.log("http://localhost:3000");
 });
+
+// app.listen(3000, function() {
+//   console.log("http://localhost:3000");
+// });
 
 app.set('view engine', 'ejs');
 
